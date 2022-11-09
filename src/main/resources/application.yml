@@ -1,0 +1,18 @@
+server:
+  port: 8083
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    exchange:
+      subscriber: ex.subscriber.springboot-rabbitmq-class
+    routing-key:
+      subscriber: rk.subscriber.springboot-rabbitmq-class
+    dead-letter:
+      subscriber: dl.subscriber.springboot-rabbitmq-class
+    parking-lot:
+      subscriber: pl.subscriber.springboot-rabbitmq-class
+    listener:
+      time-retry: 00 00 01 * * *
